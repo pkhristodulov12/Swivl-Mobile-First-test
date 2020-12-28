@@ -1,0 +1,536 @@
+@import "_colors.sass"
+@import "_fonts.sass"
+@import "_mixins.sass"
+
+.page-header
+  background: $white
+  box-shadow: 0 12px 12px rgba(0, 0, 0, 0.06)
+  box-sizing: border-box
+  display: flex
+  flex-direction: column
+  font: 600 14px "OpenSans-Regular", sans-serif
+  margin: 0 auto
+  padding: 1.31rem 1rem 1.43rem
+  position: relative
+
+  @media screen and (min-width: 1200px)
+    padding: 1.31rem 8.43rem 1.43rem 8.12rem
+    width: 1440px
+
+
+  &__tab-nav
+    display: flex
+    margin-top: 1.06rem
+
+  &__tab-list
+    display: flex
+
+  &__tab-item
+    margin-left: 2.4rem
+
+    &:first-of-type
+      margin: 0
+
+  &__user
+    display: block
+    font: 400 16px "OpenSans-Regular", sans-serif
+    letter-spacing: -0.5px
+    margin-right: 1.25rem
+
+  &__tab-link
+    color: $black
+    display: inline-block
+    line-height: 1.18rem
+    opacity: 0.6
+    position: relative
+    text-transform: uppercase
+
+    &:hover
+      opacity: 1
+
+      &:after
+        background: $button-gradient
+        content: ''
+        display: inline-block
+        height: 4px
+        left: 0
+        position: absolute
+        top: 2.4rem
+        width: 100%
+
+  &__btn-add
+    @include vertical-alignment
+    background: $button-gradient
+    border: 0
+    border-radius: 50%
+    color: $white
+    justify-content: center
+    height: 4rem
+    position: absolute
+    right: 1rem
+    top: 4.76rem
+    width: 4rem
+
+    @media screen and (max-width: 375px)
+      right: 0
+      top: 5rem
+      transform: scale(0.5)
+      width: 4rem
+
+    @media screen and (min-width: 1200px)
+      right: 8.2rem
+
+
+    &:after,
+    &:before
+      background-color: $white
+      content: ""
+      display: block
+      left: 50%
+      position: absolute
+      top: 50%
+      transform: translate(-50%, -50%)
+
+    &:before
+      height: 1.3rem
+      width: 0.1rem
+
+    &:after
+      height: 0.1rem
+      width: 1.3rem
+
+
+  &__top-nav
+    @include vertical-alignment
+    justify-content: space-between
+    flex-wrap: wrap
+
+  &__profile-section
+    @include vertical-alignment
+
+  .columns
+    align-items: center
+    @include vertical-alignment
+
+  .file-upload
+    display: none
+
+  .circle
+    border-radius: 50%
+    height: 2rem
+    overflow: hidden
+    width: 2rem
+
+    .profile-pic
+      max-width: 100%
+      height: auto
+
+  .upload-button
+    cursor: pointer
+    font-size: 0.5em
+    margin-left: 0.6rem
+
+    &:before
+      content: url("../img/dropdown.jpg")
+      display: inline-block
+      transform: scale(0.5)
+
+    &:hover
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+      color: #999
+
+  &__buttons-list
+    display: flex
+    margin-left: 1.31rem
+
+  &__action-list
+    display: flex
+
+  &__notification-link
+    content: url("../img/svg/icon-notifications.svg")
+
+  &__present-link
+    content: url("../img/svg/icon-present.svg")
+
+  &__medium-link
+    content: url("../img/svg/icon-medium.svg")
+
+.main-content
+  align-items: flex-start
+  background: $grey
+  box-sizing: border-box
+  display: flex
+  margin: 0.62rem auto 0
+
+  @media screen and (max-width: 1024px)
+    flex-wrap: wrap
+
+  @media screen and (min-width: 1200px)
+    padding: 3.9rem 8.43rem 14.37rem 8.12rem
+    width: 1440px
+
+  .user-details
+    align-items: flex-start
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    padding: 1.31rem 1rem 1.43rem
+
+    @media screen and (min-width: 1200px)
+      justify-content: flex-start
+      max-width: 21.87rem
+      padding: 0
+
+    &__profile
+      display: flex
+      flex-wrap: wrap
+
+    &__profile-logo
+      border-radius: 50%
+      max-width: 7.5rem
+
+    &__profile-info
+      color: $black-blue
+      display: flex
+      flex-direction: column
+      margin-left: 1.5rem
+
+      @media screen and (max-width: 320px)
+        margin-left: 0
+        text-align: center
+
+    &__profile-name
+      display: inline-block
+      font: 1rem 'Montserrat-SemiBold', sans-serif
+      max-width: 145px
+
+      @media screen and (max-width: 320px)
+        margin-top: 1rem
+
+      @media screen and (min-width: 1200px)
+        font-size: 1.5rem
+        line-height: 1.625rem
+
+    &__profile-mail
+      font: 400 1rem/1.25 'OpenSans-Regular', sans-serif
+      letter-spacing: -0.5px
+      margin-top: 0.5rem
+
+    &__profile-edit
+      @include vertical-alignment
+      color: $red
+      font: 400 1rem/1.25 'OpenSans-Regular', sans-serif
+      margin-top: 1rem
+      text-decoration: underline
+
+      &:before
+        content: url('../img/svg/edit-icon.svg')
+        margin-right: 0.5rem
+        height: 1.25rem
+        width: 1.25rem
+
+      @media screen and (max-width: 320px)
+        justify-content: center
+
+    &__followers-list
+      display: flex
+      font: 1.125rem/1.5rem "OpenSans-Regular", sans-serif
+      justify-content: center
+      margin: 2rem 0 0 0
+      padding: 0
+      width: 100%
+
+      @media screen and (min-width: 1200px)
+        justify-content: flex-start
+
+    &__followers-item
+
+      .first
+        padding-left: 0
+
+    &__followers-column
+      letter-spacing: -0.6px
+      padding-left: 1rem
+      text-align: center
+
+      @media screen and (min-width: 1200px)
+        padding-left: 2.89rem
+
+    &__followers-quantity
+        color: $black-blue
+        font-family: "OpenSans-Bold", sans-serif
+        font-weight: 700
+
+    &__description
+      font: 400 1rem/1.5 'OpenSans-Regular', sans-serif
+      margin-top: 1.43rem
+      text-align: center
+
+      @media screen and (min-width: 1200px)
+        text-align: left
+
+
+    .dropdown
+      position: relative
+      left: 25px
+      top: 3px
+
+      &__button
+        &:before
+          content: url('../img/svg/icon-dots.svg')
+          height: 1.25rem
+          width: 1.25rem
+
+      &__content
+        background: $white
+        border-radius: 0.5rem
+        display: none
+        position: absolute
+        left: -9.75rem
+        opacity: 0.94
+        padding: 1rem 0 2rem 0
+        top: 3rem
+        z-index: 999
+
+        @media screen and (min-width: 767px)
+          left: 0
+
+      &__report-button,
+      &__delete-button
+        @include vertical-alignment
+        color: $black
+        font: 600 1rem/1.38rem "OpenSans-Bold", sans-serif
+
+      &__report-button
+        &:before
+          content: url('../img/svg/icon-report.svg')
+          margin-right: 1rem
+          height: 23px
+          width: 21px
+
+      &__delete-button
+        &:before
+          content: url('../img/svg/icon-delete.svg')
+          margin-right: 1rem
+          height: 20px
+          width: 20px
+
+      &__list-item
+        padding: 0.4rem 1.43rem 0.4rem 1.2rem
+        white-space: nowrap
+
+        &:hover
+          background: $light-blue
+
+
+
+  .right-column
+
+    .radio-switch
+      border: none
+      padding: 0
+      white-space: nowrap
+      text-align: center
+
+      @media screen and (min-width: 1200px)
+        margin-left: 3.5rem
+        text-align: left
+
+      &__inner
+        display: inline-block
+        position: relative
+
+      label
+        cursor: pointer
+        display: inline-block
+        font: 600 1rem/1.36rem "OpenSans-Bold", sans-serif
+        position: relative
+        z-index: 2
+
+        &:hover
+          text-decoration: none
+
+        &:first-of-type
+          padding-right: 5em
+          &:after
+            background: $pink-red
+            border-radius: 1em
+            margin: 0 2rem
+            transition: background .2s ease-in-out
+            width: 2.5rem
+
+
+        &:last-child
+          margin-left: -4.29em
+          padding-left: 5em
+
+      input
+        appearance: none
+        background: none
+        height: 100%
+        opacity: .00001
+        position: absolute
+        top: 0
+        width: 30%
+        z-index: 3
+
+        &:first-of-type
+          left: 0
+
+          &:checked
+            & ~ label
+              &:first-of-type
+                &:after
+                  background: #2196f3
+
+                &:before
+                  right: 1.6rem
+
+
+
+        &:last-of-type
+          right: 0
+          &:checked
+            & ~ label
+              &:last-of-type
+                z-index: 1
+
+
+        &:not(:checked):hover
+          & + label
+            text-decoration: underline
+
+
+    .radio-switch--hide-legend
+      legend
+        font-size: 2px
+        opacity: 0
+        position: absolute
+
+    .radio-switch label:first-of-type:before,
+    .radio-switch label:first-of-type:after
+      content: ""
+      height: 1.5rem
+      overflow: hidden
+      pointer-events: none
+      position: absolute
+      vertical-align: middle
+
+    .radio-switch label:first-of-type:before
+      background: $white
+      border-radius: 100%
+      height: 1.13rem
+      position: absolute
+      right: 0.75rem
+      transition: right .2s ease-in-out
+      top: 0.2rem
+      width: 1.13rem
+      z-index: 2
+
+
+.card-content
+  display: flex
+  flex-wrap: wrap
+  justify-content: flex-end
+  margin-top: 2.9rem
+
+  @media screen and (max-width: 1024px)
+    justify-content: center
+
+.card-section
+  background: $white
+  border-radius: 0.5rem
+  box-sizing: border-box
+  margin: 1.31rem 1rem 1.43rem
+  padding: 1.31rem 1rem 1.43rem
+
+  @media screen and (max-width: 320px)
+    max-width: 17.8rem
+
+  @media screen and (max-width: 380px)
+    padding: 1.31rem 0.5rem 1.43rem
+
+  @media screen and (min-width: 1200px)
+    flex-basis: 23.4rem
+    padding: 1.5rem
+    margin: 1.5rem 0 0 1.78rem
+
+  &__title
+    font: 400 2.25rem "Montserrat-Regular", sans-serif
+    margin-top: 2rem
+
+    &.shared-exists
+      margin-top: 0.81rem
+
+
+  &__shared
+    @include vertical-alignment
+    color: $black
+    font: 600 1rem/1.36rem "OpenSans-Bold", sans-serif
+    white-space: nowrap
+
+  &__shared-link
+    color: $black
+    display: flex
+
+    &:before
+      content: url('../img/svg/icon-copy.svg')
+      margin-right: 4px
+      height: 1rem
+      width: 1rem
+
+  &__shared-status
+    background: $light-blue
+    border-radius: 6px
+    line-height: 1rem
+    margin-left: 0.5rem
+    max-width: 14.37rem
+    overflow: hidden
+    padding: 0.25em
+    text-overflow: ellipsis
+    white-space: nowrap
+
+  &__stats
+    @include vertical-alignment
+    font: 600 0.87rem/1.19rem "OpenSans-Bold", sans-serif
+    justify-content: space-between
+    margin-top: 2.75rem
+
+  &__stats-user
+    @include vertical-alignment
+
+    &:before
+      background: $dark-grey
+      border-radius: 50%
+      content: ''
+      display: inline-block
+      height: 1.5rem
+      margin-right: 0.5rem
+      vertical-align: middle
+      width: 1.5rem
+
+  &__stats-icons
+    @include vertical-alignment
+
+  &__stats-view
+    @include vertical-alignment
+
+    &:first-of-type
+      &:before
+        content: url("../img/svg/icon-view.svg")
+        margin-right: 0.5rem
+        height: 1rem
+        width: 1rem
+
+  &__stats-like
+    @include vertical-alignment
+
+    &:last-of-type
+     &:before
+      margin-right: 0.5rem
+      height: 1rem
+      width: 1rem
+
+  &__stats-share
+    color: $red
+    font: 400 1.14rem/1.6rem "OpenSans-Regular", sans-serif
